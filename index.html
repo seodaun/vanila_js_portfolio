@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet" href="./public/stylesheet/index.css">
+    <link rel="stylesheet" href="./public/stylesheet/mac-popup.css">
+    <title>portfolio</title>
+</head>
+
+<body>
+    <div id="mac-popup">
+        <header>
+            <div class="mac-btn">
+                <div id="closed">
+                    <span>×</span>
+                </div>
+                <div>
+                    <span>-</span>
+                </div>
+                <div id="fullscreen">
+                    <span>＋</span>
+                </div>
+            </div>
+            <div class="folder-name">
+                <img src="./public/images/menu-icon/folder.png" alt="folder">
+                <p>design</p>
+            </div>
+            <div class="arrow-btn">
+                <div id="back">
+                    <span>&lt;</span>
+                </div>
+                <div id="forward">
+                    <span>&gt;</span>
+                </div>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="" class="folder" data-iframe="about">
+                        <img src="./public/images/menu-icon/folder.png" alt="folder">
+                        <p>about</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="folder" data-iframe="project">
+                        <img src="./public/images/menu-icon/folder.png" alt="folder">
+                        <p>project</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="folder" data-iframe="activity">
+                        <img src="./public/images/menu-icon/folder.png" alt="folder">
+                        <p>activity</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <iframe src="" id="iframe" frameborder="0"></iframe>
+        </section>
+    </div>
+    <div id="wrap">
+        <div class="background">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" class="folder" data-iframe="about">
+                            <img src="./public/images/menu-icon/folder.png" alt="menu-icon" class="big-img">
+                            <p>about</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="folder" data-iframe="project">
+                            <img src="./public/images/menu-icon/folder.png" alt="menu-icon" class="big-img">
+                            <p>project</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="folder" data-iframe="activity">
+                            <img src="./public/images/menu-icon/folder.png" alt="menu-icon" class="big-img">
+                            <p>activity</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.co.kr" target="_blank">
+                            <img src="./public/images/menu-icon/chrome.png" alt="menu-icon" class="small-img">
+                            <p>browser</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:daun4799@naver.com">
+                            <img src="./public/images/menu-icon/gmail.png" alt="menu-icon" class="small-img">
+                            <p>mail</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/park-bohee" target="_blank">
+                            <img src="./public/images/menu-icon/github.png" alt="menu-icon" class="small-img">
+                            <p>github</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let iframe = document.getElementById('iframe');
+            let macPopup = document.getElementById('mac-popup');
+            let folders = document.getElementsByClassName('folder');
+            let folderName = document.getElementsByClassName('folder-name')[0].children[1];
+            let closed = document.getElementById('closed');
+            let back = document.getElementById('back');
+            let forward = document.getElementById('forward');
+            for (let folder of folders) {
+                folder.addEventListener('click', event => {
+                    event.preventDefault();
+                    folderName.innerText = folder.dataset.iframe;
+                    iframe.setAttribute('src', './views/' + folder.dataset.iframe + '.html');
+                    macPopup.style.display = 'block';
+                }, false); // folder 'click'
+            }
+            iframe.addEventListener('load', () => {
+                let iframeDocument = iframe.contentWindow.document;
+                let insideFolders = iframeDocument.getElementsByClassName('insideFolder');
+
+                if (insideFolders) {
+                    for (let insideFolder of insideFolders) {
+                        insideFolder.addEventListener('click', event => {
+                            let insideFolderName = insideFolder.dataset.iframe.split('/');
+                            event.preventDefault();
+                            folderName.innerText = insideFolderName[insideFolderName.length - 1].replace('-', ' ');
+                            iframe.setAttribute('src', './views/' + insideFolder.dataset.iframe + '.html');
+                        }, false); // insideFolder 'click'
+                    } // for (insideFolder.length)
+                } // if (insideFolder)
+            }); // iframe 'load'
+
+            closed.addEventListener('click', () => {
+                iframe.setAttribute('src', '');
+                macPopup.style.display = 'none';
+            }); // closed 'click'
+
+            back.addEventListener('click', () => {
+                history.back();
+            }); // back 'click'
+
+            forward.addEventListener('click', () => {
+                history.forward();
+            }); // forward 'click'
+        });
+    </script>
+</body>
+
+</html>

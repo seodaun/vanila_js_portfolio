@@ -6,87 +6,77 @@
 	--font-midium: 0.9rem;
 	--font-large: 1.125rem;
 }
-* {
+* {box-sizing: border-box;
 	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+	padding: 0; 
 	font-family: 'Open Sans', sans-serif;
-}
+} 
 #about {
 	width: 100%;
 	height: 100%;
+	padding: 0.8rem 0 0 0.8rem; 
 }
-#about .profile {
-	width: 100%;
-	height: 11.25rem;
-	padding: 0.9375rem;
+#about ul.about-list{ 
+	list-style: none; 
+}  
+#about ul.about-list li{  
+}  
+#about h2{
+	margin-bottom: 0.4rem;
 }
-#about .profile h2 {
-	font-size: var(--font-large);
-	margin: 0 0 0.625rem 0.3125rem;
+#about .profile{
+
 }
-#about .profile .profile-img {
-	float: left;
+#about .profile .profile-info{
+	display:flex;
+	flex-direction: row;
+}
+#about .profile .profile-img{ 
+}
+#about .profile .profile-img img{
 	width: 7.5rem;
 	height: 7.5rem;
-	overflow: hidden;
 	border-radius: 0.3125rem;
+} 
+#about .profile ul.profile-content{
+	list-style: none; 
 }
-#about .profile .profile-img img {
-	width: 100%;
-	height: 100%;
+#about .profile ul.profile-content li{
+	display:flex;
+	align-items: center; 
 }
-
-#about .profile ul {
-	width: 20.625rem;
-	height: 7.5rem;
-	list-style: none;
-	font-size: var(--font-midium);
-	float: left;
-}
-#about .profile ul li {
-	width: 100%;
-	height: 2.5rem;
-	list-style: none;
-	display: flex;
-	align-items: center;
-}
-#about .profile ul li img {
+#about .profile ul.profile-content li img{ 
 	width: 1.5rem;
-	height: 1.5rem;
-	margin: 0.625rem;
+	width: 1.5rem; 
+	margin: 0.5rem;
 }
-#about .profile ul li p,
-a {
-	float: left;
-	font-size: var(--font-small);
-	line-height: 2.5rem;
+#about .profile ul.profile-content li p{
+	float:right;
 }
-#about .profile ul li a {
+#about .profile ul.profile-content li a{
 	color: var(--dark-c);
 	text-decoration: none;
 }
 
-#about div.education {
-	width: 100%;
-	height: 6.25rem;
-	padding: 0.9rem; 
-}
-#about div.education h2 {
-	font-size: var(--font-large);
-	margin: 0 0 0.3rem 0.3125rem;
-}
-#about div.education img {
-	float: left;
+#about .education img{
 	width: 2.3rem;
-	height: 2.3rem;
-	margin: 0.15625rem 0.625rem 0.15625rem 0.3125rem;
+	height: 2.3rem;  
 }
-#about div.education p {
-	font-size: var(--font-small); 
-	line-height: 1.25rem;
-}  
-#about div.education h5 { 
-	line-height: 1.25rem;
-}   
-                                                 
+#about .education .education-content{ 
+	display:flex;
+	flex-direction: row;
+	margin: 0.6rem;
+}
+#about .education .education-content .education-info {  
+	margin-left: 1rem;
+}
+
+#about .education .education-content .education-info p{
+	font-size: 0.9rem;
+}
+
+@media screen and (max-width:380px){
+	#about .profile .profile-info{
+	flex-direction: column;
+	}
+}

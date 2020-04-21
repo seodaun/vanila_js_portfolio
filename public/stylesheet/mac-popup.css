@@ -10,6 +10,8 @@
 
 	--font-midium: 0.75rem;
 	--font-small: 0.5rem;
+
+	--container-height: 100%;
 }
 
 /* popup */
@@ -21,6 +23,7 @@
 	transform: translate(-50%, -50%);
 	z-index: 10;
 	width: 80%; 
+	height: 50%;
 	border-radius: 10px;
 	box-shadow: 3px 3px 25px var(--black-light-c);
 	overflow: hidden;
@@ -122,7 +125,7 @@
 #mac-popup section {
 	float: left;
 	width: 80%;
-	height: 25rem;
+	height: var(--container-height);
 	border-radius: 0 0 10px 0;
 	background-color: var(--white-light-c);
 }
@@ -135,7 +138,7 @@
 #mac-popup > nav {
 	float: left;
 	width: 20%;
-	height: 25rem;
+	height: var(--container-height);
 	border-radius: 0 0 0 10px;
 	background-color: var(--white-dark-c);
 }
@@ -158,3 +161,12 @@
 	line-height: 1.2rem;
 }
  
+@media screen and (max-width:500px){
+	#wrap nav{
+		width: 16.3rem;  
+	}
+	#mac-popup {
+		width: 90%;
+		height: 90%;
+	} 
+}

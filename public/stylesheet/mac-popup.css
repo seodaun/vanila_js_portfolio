@@ -7,13 +7,13 @@
 	--red-c: #f95f5b;
 	--orange-c: #fcbc2a;
 	--green-c: #27cc40;
+	--grey-c: #a5a5a5;
 
 	--font-midium: 0.75rem;
 	--font-small: 0.5rem;
 
 	--container-height: 100%;
-}
-
+} 
 /* popup */
 #mac-popup {
 	display: none;
@@ -157,7 +157,9 @@
 	font-size: var(--font-midium);
 	line-height: 1.2rem;
 }
- 
+#mac-popup > nav ul li:hover{
+	background-color: var(--grey-c);
+} 
 @media screen and (max-width:500px){
 	#wrap nav{
 		width: 16.3rem;  
@@ -166,4 +168,9 @@
 		width: 90%;
 		height: 90%;
 	} 
-}
+} 
+@media screen and (min-width:900px){ 
+	#mac-popup {
+		width: 810px; 
+	} 
+} 

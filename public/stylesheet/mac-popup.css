@@ -79,8 +79,8 @@
 	position: absolute;
 	top: 0;
 	left: 50%;
-	transform: translateX(-50%);
-	height: 1.75rem;  
+	transform: translateX(-50%); 
+	margin-top: 0.2rem;
 }
 #mac-popup header div.folder-name img {
 	height: 1rem;
@@ -89,6 +89,7 @@
 #mac-popup header div.folder-name p {
 	float: right;
 	font-size: var(--font-midium);
+	margin-left: 0.5rem;
 }
 
 #mac-popup header div.arrow-btn {

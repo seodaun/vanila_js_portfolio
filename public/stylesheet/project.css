@@ -37,3 +37,9 @@
     text-align: center;
   }
   
+ul.fileList{
+    list-style: none;
+}
+ul.fileList img{
+    width: 10px;
+}

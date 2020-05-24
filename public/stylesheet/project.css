@@ -4,6 +4,9 @@
     padding: 0;
 	font-family: 'Open Sans', sans-serif;
 }
+div#project{
+	padding: 0.8rem 0 0 0.8rem; 
+}
 /* folderList */
 .folderList {
     width: 100%;

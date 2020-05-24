@@ -127,7 +127,6 @@
             iframe.addEventListener('load', () => {
                 let iframeDocument = iframe.contentWindow.document;
                 let insideFolders = iframeDocument.getElementsByClassName('insideFolder');
-
                 if (insideFolders) {
                     for (let insideFolder of insideFolders) {
                         insideFolder.addEventListener('click', event => {
@@ -135,10 +134,10 @@
                             event.preventDefault();
                             folderName.innerText = insideFolderName[insideFolderName.length - 1].replace('-', ' ');
                             iframe.setAttribute('src', './views/' + insideFolder.dataset.iframe + '.html');
-                        }, false); // insideFolder 'click'
-                    } // for (insideFolder.length)
-                } // if (insideFolder)
-            }); // iframe 'load'
+                        }, false);
+                    }
+                }
+            });
 
             closed.addEventListener('click', () => {
                 iframe.setAttribute('src', '');

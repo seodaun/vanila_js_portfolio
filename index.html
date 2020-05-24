@@ -122,7 +122,7 @@
                     folderName.innerText = folder.dataset.iframe;
                     iframe.setAttribute('src', './views/' + folder.dataset.iframe + '.html');
                     macPopup.style.display = 'block';
-                }, false); // folder 'click'
+                }, false);
             }
             iframe.addEventListener('load', () => {
                 let iframeDocument = iframe.contentWindow.document;
@@ -142,15 +142,15 @@
             closed.addEventListener('click', () => {
                 iframe.setAttribute('src', '');
                 macPopup.style.display = 'none';
-            }); // closed 'click'
+            });
 
             back.addEventListener('click', () => {
                 history.back();
-            }); // back 'click'
+            });
 
             forward.addEventListener('click', () => {
                 history.forward();
-            }); // forward 'click'
+            });
         });
     </script>
 </body>

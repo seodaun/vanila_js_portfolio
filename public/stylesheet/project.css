@@ -83,3 +83,9 @@
     float: left;
     height: 8.125rem;
   }   
+  .project-infomation ul li img {
+    float: left;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin: 0.0625rem 0.3125rem 0.0625rem 0;
+  }
